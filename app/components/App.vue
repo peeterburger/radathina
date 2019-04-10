@@ -12,7 +12,7 @@
             </TabViewItem>
             <TabViewItem title="Tab 2">
                 <GridLayout columns="*" rows="*">
-                    <Label class="message" text="Tab 2 Content" col="0" row="0"/>
+                    <Wetter></Wetter>
                 </GridLayout>
             </TabViewItem>
             <TabViewItem title="Tab 3">
