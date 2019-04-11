@@ -10,6 +10,7 @@ if(TNS_ENV !== 'production') {
 // Prints Vue logs when --env.production is *NOT* set while building
 Vue.config.silent = (TNS_ENV === 'production')
 
+Vue.registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView)
 
 new Vue({
   store,

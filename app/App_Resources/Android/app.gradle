@@ -1,5 +1,12 @@
 // Add your native dependencies here:
 
+dependencies {
+  implementation 'com.google.android.gms:play-services-base:16.1.0'
+  implementation 'com.google.android.gms:play-services-gcm:16.1.0'
+  implementation 'com.google.android.gms:play-services-location:16.0.0'
+  implementation 'com.google.android.gms:play-services-auth:16.0.1'
+}
+
 android {
   defaultConfig {  
     generatedDensities = []
@@ -9,3 +16,18 @@ android {
     additionalParameters "--no-version-vectors"  
   }  
 } 
+
+def settingsGradlePath
+
+if(project.hasProperty("appResourcesPath")){
+    settingsGradlePath = "$project.appResourcesPath/Android/settings.gradle";
+} else {
+    settingsGradlePath = "$rootDir/../../app/App_Resources/Android/settings.gradle";
+}
+
+def settingsGradleFile = new File(settingsGradlePath);
+
+if(settingsGradleFile.exists())
+{
+    apply from: settingsGradleFile;
+}

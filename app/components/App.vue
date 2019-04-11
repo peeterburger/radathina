@@ -1,37 +1,42 @@
 <template>
     <Page>
-        <ActionBar title="Welcome to NativeScript-Vue!" android:flat="true"/>
-        <TabView android:tabBackgroundColor="#53ba82"
-                 android:tabTextColor="#c4ffdf"
-                 android:selectedTabTextColor="#ffffff"
-                 androidSelectedTabHighlightColor="#ffffff">
-            <TabViewItem title="Tab 1">
+        <ActionBar title="Welcome to radathina!" android:flat="true" />
+        <TabView android:tabBackgroundColor="#53ba82" android:tabTextColor="#c4ffdf"
+            android:selectedTabTextColor="#ffffff" androidSelectedTabHighlightColor="#ffffff">
+            <TabViewItem title="Map">
                 <GridLayout columns="*" rows="*">
-                    <Label class="message" :text="msg" col="0" row="0"/>
+                    <Map width="1000" height="1000" />
                 </GridLayout>
             </TabViewItem>
-            <TabViewItem title="Tab 2">
+            <TabViewItem title="Wetter">
                 <GridLayout columns="*" rows="*">
-                    <Label class="message" text="Tab 2 Content" col="0" row="0"/>
+                    <Wetter></Wetter>
                 </GridLayout>
             </TabViewItem>
             <TabViewItem title="Tab 3">
                 <GridLayout columns="*" rows="*">
-                    <Label class="message" text="Tab 3 Content" col="0" row="0"/>
+                    <Label class="message" text="Tab 3 Content" col="0" row="0" />
                 </GridLayout>
             </TabViewItem>
         </TabView>
     </Page>
 </template>
 
-<script >
-  export default {
-    data() {
-      return {
-        msg: 'Hello World!'
-      }
+<script>
+    import Wetter from './Wetter'
+    import Map from './Map'
+
+    export default {
+        data() {
+            return {
+                msg: 'Hello World!'
+            }
+        },
+        components: {
+            Wetter,
+            Map
+        }
     }
-  }
 </script>
 
 <style scoped>

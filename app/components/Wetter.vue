@@ -4,7 +4,6 @@
 			<Label class="bold" :text="city"></Label>
 			<Label :text="summary"></Label>
 			<Image class="weather-image" :src="image" />
-
 			<GridLayout class="weather-box" columns="1*,1*" rows="auto">
 				<Label col="0" row="0" class="large" :text="currentTemperature"></Label>
 				<StackLayout col="1" row="0">
